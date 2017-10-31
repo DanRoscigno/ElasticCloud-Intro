@@ -21,7 +21,7 @@ Talk for the Elastic Triangle User Group in Durham NC.  Lightning fast intro to 
 
 **Architecture** (2 min)
 
-![Events -> Netcool -> Logstash -> Elasticsearch -> Kibana](https://user-images.githubusercontent.com/25182304/32245126-23b52252-be51-11e7-8736-4259b0a7e749.png)
+![Events -> Netcool -> Logstash -> Elasticsearch -> Kibana](https://user-images.githubusercontent.com/25182304/32248340-c0aeeade-be5b-11e7-8789-a86c9e18c277.png)
 
 **Setup account** and cluster (2 min)
 
