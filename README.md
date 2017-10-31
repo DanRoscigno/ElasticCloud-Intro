@@ -17,9 +17,17 @@ Think about how your company works.  If your Ops team is broken into silos (DBAs
 
 **Architecture** (2 min)
 
+![Events -> Netcool -> Logstash -> Elasticsearch -> Kibana](https://user-images.githubusercontent.com/25182304/32245126-23b52252-be51-11e7-8736-4259b0a7e749.png)
+
 **Setup account** and cluster (2 min)
 
 **Philosophy** (2 min)
+
+This comes from Jordan Sissel, who is the main contributor to Logstash
+
+![If a new user has a hard time, IT'S A BUG!](https://user-images.githubusercontent.com/25182304/32244045-b4ef4364-be4d-11e7-8726-c79d62af2946.png)
+
+@jordansissel
 
 **Getting started with moving data** (2 min)
 - Beginner Logstash config
