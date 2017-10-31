@@ -13,7 +13,11 @@ Talk for the Elastic Triangle User Group in Durham NC.  Lightning fast intro to 
 **Demo** (5 min)
 
 **Design considerations** (5 min)
-Think about how your company works.  If your Ops team is broken into silos (DBAs, Sys Admins, App Admins, Network People, Firewall People) that don't work together, then you need to have a way to group 
+- Me: I am an SRE at IBM working on the performance and incident services we provide in IBM's Cloud.  My introduction to Elastic was building Logstash integrations for 31 device types for a bank.  This was a great gig, and we learned a whole bunch :)
+
+- Organizing your Data: Think about how your company works.  If your Ops team is broken into silos (DBAs, Sys Admins, App Admins, Network People, Firewall People) that don't work together, then you need to have a way to group "stuff" from various sources.
+
+- A common format: You might use PD-CEF (https://support.pagerduty.com/v1/docs/pd-cef), or something similar.  While I think this is absoluteley necessary at a higher level, I also see the need to think about specific log formats.  One of the cool things about Elastic is the ability to chart data from logs.  If you want to chart the response time of a web server by using the response time field in the access logs, then you need a field for that.  So, what I propose is that you start out by deciding which fields you need based on the above **Organizing your Data** bullet and add those to the fields for your source.  I will show you this in a few minutes.
 
 **Architecture** (2 min)
 
