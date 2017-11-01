@@ -110,7 +110,7 @@ Notice that the message format looks like a semicolon delimited format:
 let's work on a pattern for that:
 ![DATA:a, DATA:b, etc.](https://user-images.githubusercontent.com/25182304/32280820-72a08ae4-bef3-11e7-8cd1-077dd83a6b55.png)
 
-At this point I realize that since this is truly just a semicolon delimited string I would be better off using a plugin designed for CSVs.  But one more grok pattern is necessary, and you will very often see some leading or trailing text that needs to be stripped, so here is what I did:
+At this point I realize that since this is truly just a semicolon delimited string I would be better off using a plugin designed for CSVs.  But one quick filter (**gsub**) is necessary, and you will very often see some leading or trailing text that needs to be stripped, so here is what I did:
 
 ```
 filter {
@@ -180,11 +180,10 @@ Here is the Ruby Debug output:
 }
 ```
 
-- then grok debugger
-- then csv plug-in
-- then elasticsearch output
+- Before replacing the grok pattern with the CSV plugin let's see what the field names should be.  This is from the code that is streaming the data over from Netcool.  We will use the first column as the field names for the CSV plugin:
 
-- Beginner Logstash config
+![DATA:a, DATA:b, etc.](https://user-images.githubusercontent.com/25182304/32282172-4522d6c2-bef7-11e7-9141-5befab3c547d.png)
+
 ```
 input {
   tcp {
