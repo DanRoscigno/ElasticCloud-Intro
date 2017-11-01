@@ -71,7 +71,7 @@ And the Ruby Debug output.  The line I look at is the **message**
 }
 ```
 Let's pull out the message line and pop that in the grok debugger https://grokdebug.herokuapp.com/
-https://user-images.githubusercontent.com/25182304/32279443-2337e014-beef-11e7-99f7-c2030917a4a7.png
+![Grok Debugger](https://user-images.githubusercontent.com/25182304/32279443-2337e014-beef-11e7-99f7-c2030917a4a7.png)
 - then grok debugger
 - then csv plug-in
 - then elasticsearch output
