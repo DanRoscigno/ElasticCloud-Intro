@@ -182,7 +182,7 @@ Here is the Ruby Debug output:
 
 - Before replacing the grok pattern with the CSV plugin let's see what the field names should be.  This is from the code that is streaming the data over from Netcool.  We will use the first column as the field names for the CSV plugin:
 
-![DATA:a, DATA:b, etc.](https://user-images.githubusercontent.com/25182304/32282172-4522d6c2-bef7-11e7-9141-5befab3c547d.png)
+![Gateway mapping](https://user-images.githubusercontent.com/25182304/32282172-4522d6c2-bef7-11e7-9141-5befab3c547d.png)
 
 ```
 input {
