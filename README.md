@@ -107,7 +107,8 @@ Let's pull out the message line and pop that in the grok debugger https://grokde
 Notice that the message format looks like a semicolon delimited format:
 ![Lots of semicolons](https://user-images.githubusercontent.com/25182304/32280229-89c27234-bef1-11e7-8c9d-99e77497c382.png)
 
-let's work on a pattern for that.
+let's work on a pattern for that:
+![DATA:a, DATA:b, etc.](https://user-images.githubusercontent.com/25182304/32280820-72a08ae4-bef3-11e7-8cd1-077dd83a6b55.png)
 
 - then grok debugger
 - then csv plug-in
