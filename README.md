@@ -43,7 +43,7 @@ This comes from Jordan Sissel, who is the main contributor to Logstash
 
 **Getting started with moving data** (2 min)
 
-- Show minimal logstash with tcp listening on port and dumping to stdout
+- Minimal logstash config listening on port 1235 and writing to STDOUT
 ```
 input {
   tcp {
@@ -59,7 +59,7 @@ output {
 
 } # end output
 ```
-
+And the Ruby Debug output.  The line I look at is the **message**
 ```
 {
       "@version" => "1",
@@ -70,7 +70,8 @@ output {
           "port" => 55298
 }
 ```
-
+Let's pull out the message line and pop that in the grok debugger https://grokdebug.herokuapp.com/
+https://user-images.githubusercontent.com/25182304/32279443-2337e014-beef-11e7-99f7-c2030917a4a7.png
 - then grok debugger
 - then csv plug-in
 - then elasticsearch output
