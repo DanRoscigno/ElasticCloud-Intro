@@ -44,6 +44,33 @@ This comes from Jordan Sissel, who is the main contributor to Logstash
 **Getting started with moving data** (2 min)
 
 - Show minimal logstash with tcp listening on port and dumping to stdout
+```
+input {
+  tcp {
+    type => "netcool"
+    codec => "plain"
+    port => 1235
+  } # end tcp
+} # end input
+
+output {
+
+  stdout { codec => rubydebug } # end stdout 
+
+} # end output
+```
+
+```
+{
+      "@version" => "1",
+          "host" => "10.106.48.6",
+    "@timestamp" => 2017-11-01T14:04:28.480Z,
+       "message" => "UPDATE\"sidr30eoisnco01.noc.envops.ibmserviceengage.com\";\"sidr30eoisnco01.noc.envops.ibmserviceengage.com\";\"ConnectionStatus\";\"\";2;\"GATEWAY: Gateway Reader/Writer connected from host sidr30eoisnco01.noc.envops.ibm (ID: 3).\";2017-11-01T09:04:01-0500;2017-10-29T13:42:01-0500;2017-11-01T09:04:01-0500;13;\"\";\"\";\"\";2;\"DEMO\"",
+          "type" => "netcool",
+          "port" => 55298
+}
+```
+
 - then grok debugger
 - then csv plug-in
 - then elasticsearch output
