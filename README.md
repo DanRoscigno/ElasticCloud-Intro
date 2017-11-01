@@ -15,6 +15,7 @@ Talk for the Elastic Triangle User Group in Durham NC.  Lightning fast intro to 
 - Me: I am an SRE at IBM working on the performance and incident services we provide in IBM's Cloud.  My introduction to Elastic was building Logstash integrations for 31 device types for a bank.  This was a great gig, and we learned a whole bunch :)
 
 **Demo** (5 min)
+![Kibana Dashboard](https://user-images.githubusercontent.com/25182304/32256184-e9272b5c-be83-11e7-873f-5dfb011c8180.png)
 
 **Design considerations** (5 min)
 - Me: I am an SRE at IBM working on the performance and incident services we provide in IBM's Cloud.  My introduction to Elastic was building Logstash integrations for 31 device types for a bank.  This was a great gig, and we learned a whole bunch :)
