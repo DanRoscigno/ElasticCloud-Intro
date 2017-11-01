@@ -1,7 +1,9 @@
 # ElasticCloud-Intro
+
 Talk for the Elastic Triangle User Group in Durham NC.  Lightning fast intro to getting data to the Elastic Cloud via Logstash.
 
 **Agenda** (20 minutes!)
+
 - Intro (1 min)
 - Demo (5 min)
 - Design considerations (5 min)
@@ -12,13 +14,14 @@ Talk for the Elastic Triangle User Group in Durham NC.  Lightning fast intro to 
 - Help with parsing (2 min)
 
 **Intro** (1 min)
+
 - Me: I am an SRE at IBM working on the performance and incident services we provide in IBM's Cloud.  My introduction to Elastic was building Logstash integrations for 31 device types for a bank.  This was a great gig, and we learned a whole bunch :)
 
 **Demo** (5 min)
+
 ![Kibana Dashboard](https://user-images.githubusercontent.com/25182304/32256184-e9272b5c-be83-11e7-873f-5dfb011c8180.png)
 
 **Design considerations** (5 min)
-- Me: I am an SRE at IBM working on the performance and incident services we provide in IBM's Cloud.  My introduction to Elastic was building Logstash integrations for 31 device types for a bank.  This was a great gig, and we learned a whole bunch :)
 
 - Organizing your Data: Think about how your company works.  If your Ops team is broken into silos (DBAs, Sys Admins, App Admins, Network People, Firewall People) that don't work together, then you need to have a way to group "stuff" from various sources.
 
@@ -39,6 +42,7 @@ This comes from Jordan Sissel, who is the main contributor to Logstash
 @jordansissel
 
 **Getting started with moving data** (2 min)
+
 - Beginner Logstash config
 ```
 input {
