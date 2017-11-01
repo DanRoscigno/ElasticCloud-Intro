@@ -124,7 +124,7 @@ filter {
 
 } # end filter
 ```
-This removes the first **word** from the message, note the change in the Ruby Debug:
+This removes the first **word** from the message, note the change in the Ruby Debug.  Now the **message** is conforming semicolon delimited text with double quotes around strings:
 ```
 {
       "@version" => "1",
@@ -135,7 +135,51 @@ This removes the first **word** from the message, note the change in the Ruby De
           "port" => 56670
 }
 ```
-Now the **message** is conforming semicolon delimited text with double quotes around strings.
+Before we switch to the CSV plugin let's use the grok pattern (just showing the filter section):
+```
+filter {
+
+  mutate {
+    # The message begins with either UPDATE or INSERT depending on whether it
+    # is a new event or an update.  In order for the CSV parser to succeed this
+    # initial verb needs to be removed.
+    gsub => ["message", "^\w*", ""]
+  }
+
+  grok {
+    match => { "message" => "%{DATA:a};%{DATA:b};%{DATA:c};%{DATA:d};%{DATA:e};%{DATA:f};%{DATA:g};%{DATA:h};%{DATA:i};%{DATA:j};%{DATA:k};%{DATA:l};%{DATA:m};%{DATA:n};%{GREEDYDATA:o}"}
+  } #end grok
+
+} # end filter
+```
+
+Here is the Ruby Debug output:
+```
+{
+             "a" => "\"link2\"",
+             "b" => "\"link2\"",
+             "c" => "\"Link\"",
+             "d" => "\"\"",
+             "e" => "0",
+             "f" => "\"Link Up on port\"",
+             "g" => "2017-11-01T10:16:16-0500",
+             "h" => "2017-11-01T09:39:08-0500",
+             "i" => "2017-11-01T10:16:15-0500",
+             "j" => "2",
+             "k" => "\"\"",
+       "message" => "\"link2\";\"link2\";\"Link\";\"\";0;\"Link Up on port\";2017-11-01T10:16:16-0500;2017-11-01T09:39:08-0500;2017-11-01T10:16:15-0500;2;\"\";\"\";\"Mortgage Services\";0;\"DEMO\"",
+          "type" => "netcool",
+             "l" => "\"\"",
+             "m" => "\"Mortgage Services\"",
+             "n" => "0",
+             "o" => "\"DEMO\"",
+    "@timestamp" => 2017-11-01T15:16:47.806Z,
+          "port" => 56754,
+      "@version" => "1",
+          "host" => "10.106.48.6"
+}
+```
+
 - then grok debugger
 - then csv plug-in
 - then elasticsearch output
