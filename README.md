@@ -43,6 +43,11 @@ This comes from Jordan Sissel, who is the main contributor to Logstash
 
 **Getting started with moving data** (2 min)
 
+- Show minimal logstash with tcp listening on port and dumping to stdout
+- then grok debugger
+- then csv plug-in
+- then elasticsearch output
+
 - Beginner Logstash config
 ```
 input {
