@@ -244,9 +244,9 @@ output {
 Once the above Ruby Debug is showing data flowing into Logstash and being parsed from the CSV into fileds (for example, in the above we see that the field Summary is created and populated with Diskspace alert) it is time to send to Elastic Cloud.  Here is the output stanza for my cluster in Elastic Cloud:
 ```
   elasticsearch {
-    hosts => "https://46524239483934789ded08315e5d215b.us-east-1.aws.found.io:9243/"
+    hosts => "https://1763349826735568956925692.us-east-1.aws.found.io:9243/"
     user => "logstash_agent"
-    password => "C@tF00d"
+    password => "s0up3rs3cr3t"
     index => "logstash-netcool"
   }
   ```
