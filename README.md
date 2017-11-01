@@ -103,6 +103,11 @@ COMMONMAC (?:(?:[A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2})
 
 Let's pull out the message line and pop that in the grok debugger https://grokdebug.herokuapp.com/
 ![Grok Debugger](https://user-images.githubusercontent.com/25182304/32279443-2337e014-beef-11e7-99f7-c2030917a4a7.png)
+
+Notice that the message format looks like a semicolon delimited format:
+"UPDATE\"sidr30eoisnco01.noc.envops.ibmserviceengage.com\"**;**\"sidr30eoisnco01.noc.envops.ibmserviceengage.com\";\"ConnectionStatus\"**;**\"\"**;** 2 **;**\"GATEWAY: Gateway Reader/Writer connected from host sidr30eoisnco01.noc.envops.ibm (ID: 3).\";2017-11-01T09:04:01-0500;2017-10-29T13:42:01-0500;2017-11-01T09:04:01-0500;13;\"\";\"\";\"\";2;\"DEMO\""
+
+let's work on a pattern for that.
 - then grok debugger
 - then csv plug-in
 - then elasticsearch output
