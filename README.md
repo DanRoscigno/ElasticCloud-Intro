@@ -12,6 +12,7 @@ Talk for the Elastic Triangle User Group in Durham NC.  Lightning fast intro to 
 - Philosophy (2 min)
 - Getting started with moving data (2 min)
 - Help with parsing (2 min)
+- User Management (if we have time)
 
 **Intro** (1 min)
 
@@ -251,3 +252,9 @@ Once the above Ruby Debug is showing data flowing into Logstash and being parsed
   ```
 
 **Help with parsing** (2 min)
+
+**User Management** (If we have time)
+```<rant>```
+I don't like to make everyone a superuser, not even for demos.  The user *logstash_agent* has what I think are the most restrictive permissions.  In fact, I had to use the superuser *elastic* to create the index and then switch to logstash_agent.  I have opened an issue to work out exactly what the perms need to be, as what I found in the docs and what worked a few weeks ago is not allowing the initial index to be created.  Here is what I have now:
+![Logstash Role](https://user-images.githubusercontent.com/25182304/31694587-344b0c14-b373-11e7-816c-6b6b7a92df20.png)
+
