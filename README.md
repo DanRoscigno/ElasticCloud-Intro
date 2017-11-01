@@ -2,6 +2,7 @@
 Talk for the Elastic Triangle User Group in Durham NC.  Lightning fast intro to getting data to the Elastic Cloud via Logstash.
 
 **Agenda** (20 minutes!)
+- Intro (1 min)
 - Demo (5 min)
 - Design considerations (5 min)
 - Architecture (2 min)
@@ -9,6 +10,9 @@ Talk for the Elastic Triangle User Group in Durham NC.  Lightning fast intro to 
 - Philosophy (2 min)
 - Getting started with moving data (2 min)
 - Help with parsing (2 min)
+
+**Intro** (1 min)
+- Me: I am an SRE at IBM working on the performance and incident services we provide in IBM's Cloud.  My introduction to Elastic was building Logstash integrations for 31 device types for a bank.  This was a great gig, and we learned a whole bunch :)
 
 **Demo** (5 min)
 
