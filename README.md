@@ -110,6 +110,32 @@ Notice that the message format looks like a semicolon delimited format:
 let's work on a pattern for that:
 ![DATA:a, DATA:b, etc.](https://user-images.githubusercontent.com/25182304/32280820-72a08ae4-bef3-11e7-8cd1-077dd83a6b55.png)
 
+At this point I realize that since this is truly just a semicolon delimited string I would be better off using a plugin designed for CSVs.  But one more grok pattern is necessary, and you will very often see some leading or trailing text that needs to be stripped, so here is what I did:
+
+```
+filter {
+  
+  mutate {
+    # The message begins with either UPDATE or INSERT depending on whether it
+    # is a new event or an update.  In order for the CSV parser to succeed this
+    # initial verb needs to be removed.
+    gsub => ["message", "^\w*", ""]
+  }
+
+} # end filter
+```
+This removes the first **word** from the message, note the change in the Ruby Debug:
+```
+{
+      "@version" => "1",
+          "host" => "10.106.48.6",
+    "@timestamp" => 2017-11-01T15:08:53.471Z,
+       "message" => "\"sidr30eoisnco01.noc.envops.ibmserviceengage.com\";\"sidr30eoisnco01.noc.envops.ibmserviceengage.com\";\"ConnectionStatus\";\"\";2;\"GATEWAY: Gateway Reader/Writer connected from host sidr30eoisnco01.noc.envops.ibm (ID: 3).\";2017-11-01T10:08:01-0500;2017-10-29T13:42:01-0500;2017-11-01T10:08:01-0500;13;\"\";\"\";\"\";2;\"DEMO\"",
+          "type" => "netcool",
+          "port" => 56670
+}
+```
+Now the **message** is conforming semicolon delimited text with double quotes around strings.
 - then grok debugger
 - then csv plug-in
 - then elasticsearch output
