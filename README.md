@@ -70,6 +70,37 @@ And the Ruby Debug output.  The line I look at is the **message**
           "port" => 55298
 }
 ```
+- What is grok?
+Think of grok as a collection of regular expression patterns.  Here are some default grok patterns, and you will end up with your own library if you get into this. https://grokdebug.herokuapp.com/patterns#
+```
+USERNAME [a-zA-Z0-9._-]+
+USER %{USERNAME}
+INT (?:[+-]?(?:[0-9]+))
+BASE10NUM (?<![0-9.+-])(?>[+-]?(?:(?:[0-9]+(?:\.[0-9]+)?)|(?:\.[0-9]+)))
+NUMBER (?:%{BASE10NUM})
+BASE16NUM (?<![0-9A-Fa-f])(?:[+-]?(?:0x)?(?:[0-9A-Fa-f]+))
+BASE16FLOAT \b(?<![0-9A-Fa-f.])(?:[+-]?(?:0x)?(?:(?:[0-9A-Fa-f]+(?:\.[0-9A-Fa-f]*)?)|(?:\.[0-9A-Fa-f]+)))\b
+
+POSINT \b(?:[1-9][0-9]*)\b
+NONNEGINT \b(?:[0-9]+)\b
+WORD \b\w+\b
+NOTSPACE \S+
+SPACE \s*
+DATA .*?
+GREEDYDATA .*
+QUOTEDSTRING (?>(?<!\\)(?>"(?>\\.|[^\\"]+)+"|""|(?>'(?>\\.|[^\\']+)+')|''|(?>`(?>\\.|[^\\`]+)+`)|``))
+UUID [A-Fa-f0-9]{8}-(?:[A-Fa-f0-9]{4}-){3}[A-Fa-f0-9]{12}
+
+# Networking
+MAC (?:%{CISCOMAC}|%{WINDOWSMAC}|%{COMMONMAC})
+CISCOMAC (?:(?:[A-Fa-f0-9]{4}\.){2}[A-Fa-f0-9]{4})
+WINDOWSMAC (?:(?:[A-Fa-f0-9]{2}-){5}[A-Fa-f0-9]{2})
+COMMONMAC (?:(?:[A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2})
+.
+.
+.
+```
+
 Let's pull out the message line and pop that in the grok debugger https://grokdebug.herokuapp.com/
 ![Grok Debugger](https://user-images.githubusercontent.com/25182304/32279443-2337e014-beef-11e7-99f7-c2030917a4a7.png)
 - then grok debugger
