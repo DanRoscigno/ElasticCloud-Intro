@@ -28,6 +28,16 @@ Talk for the Elastic Triangle User Group in Durham NC.  Lightning fast intro to 
 
 - A common format: You might look at <a href="https://ibm.co/2A3qIiz" target="_blank"> Netcool Fields</a> or <a href="https://support.pagerduty.com/v1/docs/pd-cef" target="_blank">PD-CEF</a> for inspiration.  While I think this is absoluteley necessary at a higher level, I also see the need for log specific formats.  Here is why: one of the cool things about the Elastic Stack is the ability to chart data from logs.  If you want to chart the response time of a web server by using the response time field in the access logs, then you need a field for that.  So, what I propose is that you start out by deciding which fields you need based on the above **Organizing your Data** bullet and add those to the fields for your source.  For example, if you are a DevOps shop, then you might want to have fields for **Service**, **Env**, **Customer**.  But if you are old school Ops, maybe you want **DataCenter**, **Team**, **OS**. 
 
+Here are the common fields I add to all data sources:
+ - Cluster (the cluster name or NONE)
+ - Environment (e.g., Dev, Test, Sizing, Prod)
+ - Instance (e.g., particular JVM name on a server or Oracle SID on a server.  When there are more than one instance of a component on a server, we use this to identify that instance.
+ - Type (e.g., WebSphere, AIX, Windows, IHS, DB2, Oracle)
+ - Service (e.g., Online Banking)
+
+
+ - 
+
 **Architecture** (2 min)
 
 ![Events -> Netcool -> Logstash -> Elasticsearch -> Kibana](https://user-images.githubusercontent.com/25182304/32248340-c0aeeade-be5b-11e7-8789-a86c9e18c277.png)
